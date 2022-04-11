@@ -4,5 +4,5 @@ function raio = raio_do_paralelo(latitude)
     
     R = 6371;
     
-    raio = R * cosd(latitudeDecimal)
+    raio = R * cosd(latitudeDecimal);
     
