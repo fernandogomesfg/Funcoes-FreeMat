@@ -5,17 +5,17 @@ function distancia_esferica(ponto1, ponto2)
     printf('Feito por Fernando Gomes\n\n')
     
     if(nargin ~= 2)
-        error('A funcao distancia_esferica deve receber exactamente dois argumentsos')
+        error('A funcao distancia_esferica deve receber exactamente dois argumentos')
     end
     
     dimPonto1 = size(ponto1);
     dimPonto2 = size(ponto2);
     if(~((dimPonto1(1) == 1 & dimPonto1(2) == 6) | (dimPonto1(1) ==  6 & dimPonto1(2) == 1)))
-        error('A dimensao do vector no ponto inicial deve se 1x6 ou 6x1')
+        error('A dimensao do vector no ponto inicial deve de 1x6 ou 6x1')
     end
     
     if(~((dimPonto2(1) == 1 & dimPonto2(2) == 6) | (dimPonto2(1) ==  6 & dimPonto2(2) == 1)))
-        error('A dimensao do vector no ponto final deve se 1x6 ou 6x1')
+        error('A dimensao do vector no ponto final deve de 1x6 ou 6x1')
     end
     
     %extracao das coordenadas dos pontos
@@ -28,32 +28,32 @@ function distancia_esferica(ponto1, ponto2)
     %coordenadas decimais
     %latitudes do ponto inicial
     if((lat1(1) < 0)  | (lat1(2) < 0) | (lat1(3) < 0))
-        lat1Decimal = -1 * ((abs(lat1(1))) + (abs(lat1(2))/60) + (abs(lat1(3))/3600))
+        lat1Decimal = -1 * ((abs(lat1(1))) + (abs(lat1(2))/60) + (abs(lat1(3))/3600));
     else
-        lat1Decimal = ((lat1(1)) + (lat1(2)/60) + (lat1(3)/3600))
+        lat1Decimal = ((lat1(1)) + (lat1(2)/60) + (lat1(3)/3600));
     end
     
     %longitudes do ponto inicial
     if((lon1(1) < 0)  | (lon1(2) < 0) | (lon1(3) < 0))
-        long1Decimal = -1 * ((abs(lon1(1))) + (abs(lon1(2))/60) + (abs(lon1(3))/3600))
+        long1Decimal = -1 * ((abs(lon1(1))) + (abs(lon1(2))/60) + (abs(lon1(3))/3600));
     else
-        lon1Decimal = ((lon1(1)) + (lon1(2)/60) + (lon1(3)/3600))
+        lon1Decimal = ((lon1(1)) + (lon1(2)/60) + (lon1(3)/3600));
     end
     
     %-----------------------------
     %coordenadas decimais
     %latitudes do ponto final
     if((lat2(1) < 0)  | (lat2(2) < 0) | (lat2(3) < 0))
-        lat2Decimal = -1 * ((abs(lat2(1))) + (abs(lat2(2))/60) + (abs(lat2(3))/3600))
+        lat2Decimal = -1 * ((abs(lat2(1))) + (abs(lat2(2))/60) + (abs(lat2(3))/3600));
     else
-        lat2Decimal = ((lat2(1)) + (lat2(2)/60) + (lat2(3)/3600))
+        lat2Decimal = ((lat2(1)) + (lat2(2)/60) + (lat2(3)/3600));
     end
     
     %longitudes do ponto final
     if((lon2(1) < 0)  | (lon2(2) < 0) | (lon2(3) < 0))
-        lon2Decimal = -1 * ((abs(lon2(1))) + (abs(lon2(2))/60) + (abs(lon2(3))/3600))
+        lon2Decimal = -1 * ((abs(lon2(1))) + (abs(lon2(2))/60) + (abs(lon2(3))/3600));
     else
-        lon2Decimal = ((lon2(1)) + (lon2(2)/60) + (lon2(3)/3600))
+        lon2Decimal = ((lon2(1)) + (lon2(2)/60) + (lon2(3)/3600));
     end
     
     %variacoes das longitudes
