@@ -1,18 +1,30 @@
-function convCoordeGeoToRect (lat, lon)
+function convCoordeGeoToRect (ponto1, ponto2)
     printf('Tendo coordenadas geográficas de um ponto, calcular as suas respectivas coordenadas cartesianas \n')
     printf('Recebe um vector seis elementos \n')
     printf('Formato do vetor: [latG latM latS longG longM longS]\n')
     printf('Feito por Fernando Gomes\n\n')
     
-    if(nargin ~= 1)
-        error('A funcao convCoordeGeoToRect deve receber exactamente 1 argumento')
+    if(nargin ~= 2)
+        error('A funcao convCoordeGeoToRect deve receber exactamente 2 argumento')
     end
     
+    dimPonto1 = size(ponto1);
+    dimPonto2 = size(ponto2);
+    if(~((dimPonto1(1) == 1 & dimPonto1(2) == 3) | (dimPonto1(1) ==  3 & dimPonto1(2) == 1)))
+        error('A dimensao do vector no ponto inicial deve de 1x3 ou 3x1')
+    end
     
+    if(~((dimPonto2(1) == 1 & dimPonto2(2) == 3) | (dimPonto2(1) ==  3 & dimPonto2(2) == 1)))
+        error('A dimensao do vector no ponto final deve de 1x3 ou 3x1')
+    end
     
     %extracao das coordenadas dos pontos
-    latitude = [lat(1) lat(2) lat(3)];
-    longitude = [lon(4) lon(5) lon(6)];
+    latitude = [ponto1(1) ponto1(2) ponto1(3)];
+    longitude = [ponto2(1) ponto2(2) ponto2(3)];
+    
+    
+    
+   
     
     %coordenadas decimais
     %latitudes do ponto 
@@ -24,10 +36,18 @@ function convCoordeGeoToRect (lat, lon)
     
     %longitude do ponto
     if((longitude(1) < 0)  | (longitude(2) < 0) | (longitude(3) < 0))
-        longDecimal = -1 * ((abs(longitude(1))) + (abs(longitude(2))/60) + (abs(longitude(3))/3600));
+        lonDecimal = -1 * ((abs(longitude(1))) + (abs(longitude(2))/60) + (abs(longitude(3))/3600));
     else
         lonDecimal = ((longitude(1)) + (longitude(2)/60) + (longitude(3)/3600));
     end
+    
+    
+    
+    
+    
+    
+    
+    
     
     r = 6371;
     
