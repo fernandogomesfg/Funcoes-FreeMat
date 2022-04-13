@@ -18,16 +18,17 @@ function azimuteToRumo(angulo)
             printf('O angulo inserido eh: %.2f graus\n' ,angulo);
             printf('O seu rumo eh: %.2f graus (SE)\n:' ,rumo);
     else if((angulo >= 180) & (angulo < 270))
-            rumo = 180 - angulo;
+            rumo = angulo -180;
             printf('O angulo inserido eh: %.2f graus\n' ,angulo);
             printf('O seu rumo eh: %.2f graus (SO)\n:' ,rumo);
     else if((angulo >= 270) & (angulo < 360))
             rumo = 360 - angulo;
             printf('O angulo inserido eh: %.2f graus\n' ,angulo);
             printf('O seu rumo eh: %.2f graus (NO)\n:' ,rumo);
-        else
+    else if((angulo < 0) & (angulo > 360))
             printf('O angulo inserido e invalido');
             printf('Insira angulo que varia 0 - 180 graus');
+        end
         end
         end
         end
